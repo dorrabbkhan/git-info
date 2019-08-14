@@ -34,7 +34,7 @@ Download gitinfo.py, and execute the file in Python. Input the Github repository
 
 
 
-
+```
 Enter url of repo: https://github.com/dorrabbkhan/demo
 
 Name: demo
@@ -43,7 +43,7 @@ Description: This is a demo repository
 Is Forked: False
 Size: 0.002 MB
 Language: None
-
+```
 
 ## Future plans
 
