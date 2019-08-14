@@ -29,7 +29,20 @@ pip install -r requrements.txt
 Download gitinfo.py, and execute the file in Python. Input the Github repository's URL, and the repository's name, owner's name, description, whether it is forked or not, size, and programming language will be displayed.
 
 
+## Example usage
 
+
+
+
+
+Enter url of repo: https://github.com/dorrabbkhan/demo
+
+Name: demo
+Owner: dorrabbkhan
+Description: This is a demo repository
+Is Forked: False
+Size: 0.002 MB
+Language: None
 
 
 ## Future plans
@@ -41,7 +54,7 @@ Download gitinfo.py, and execute the file in Python. Input the Github repository
 - Add a GUI
 - Add support for more detailed information
 - Implement on the web
-
+- Turn into a reusable package instead of a script
 
 
 ------
