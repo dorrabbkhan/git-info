@@ -54,7 +54,8 @@ Language: None
 - Add a GUI
 - Add support for more detailed information
 - Implement on the web
-- Turn into a reusable package instead of a script
+- Turn into a reusable package instead of a script and publish package
+- Write tests for the code
 
 
 ------
