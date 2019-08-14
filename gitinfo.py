@@ -127,12 +127,14 @@ class Repository:
 
         return self._repo_data["subscribers_count"]
 
+def repository(url):
+    return Repository(url)
 
 if __name__ == "__main__":
     # execute only if code is not imported
 
     url = input("Enter a URL: ")
-    new = Repository(url)
+    new = repository(url)
     # input URL and initialize the repository object
 
     print(f'\nName: {new.name()}')
