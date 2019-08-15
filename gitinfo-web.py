@@ -11,7 +11,10 @@ def index():
 
 @app.route("/get_data", methods=["POST"])
 def get_data():
+    while len(data) != 0: data.pop()
     url = request.form['url']
+    if not url.startswith("https://www.github.com/"):
+        url = "https://www.github.com/" + url
     try:
         repo = Repository(url)
         for name in [d for d in dir(repo) if not d.startswith("_") and not "url" in d]: # all magic/private methods excluded
