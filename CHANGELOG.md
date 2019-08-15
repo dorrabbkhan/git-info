@@ -24,3 +24,4 @@ All notable changes/additions/deletions are documented in this file.
 - Retained and improved functionality (more detailed information about the repository) when the code is run as a script in itself
 - Implemented slightly better error handling
 - Updated readme
+- Fixed issue #1 - added support for repository names with _ in them
