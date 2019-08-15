@@ -91,6 +91,7 @@ print(f'Subscribers: {new.subscribers()}')
 - Implement on the web
 - Turn into a reusable package instead of a script and publish package
 - Write tests for the code
+- Better documentation for usage
 
 
 ------
