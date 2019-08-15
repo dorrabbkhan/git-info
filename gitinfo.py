@@ -90,7 +90,7 @@ class Repository:
     def size(self):
         # return the repository's size in KB
 
-        return int(self._repo_data["size"])
+        return self._repo_data["size"]
 
     def language(self):
         # return the repository's language
@@ -100,22 +100,22 @@ class Repository:
     def watchers(self):
         # return the repository's number of watchers
 
-        return int(self._repo_data["watchers"])
+        return self._repo_data["watchers"]
 
     def stars(self):
         # return the repository's number of stars
 
-        return int(self._repo_data["stargazers_count"])
+        return self._repo_data["stargazers_count"]
 
     def forks(self):
         # return the repository's number of forks
 
-        return int(self._repo_data["forks_count"])
+        return self._repo_data["forks_count"]
 
     def open_issues(self):
         # return the repository's number of open issues
 
-        return int(self._repo_data["open_issues"])
+        return self._repo_data["open_issues"]
 
     def default_branch(self):
         # return the repository's default branch name
