@@ -46,69 +46,69 @@ class TestRepo(unittest.TestCase):
     def test_name(self):
         # check if returned name is string
 
-        self.assertIsInstance(test_repo.name(), str)
+        self.assertIs(type(test_repo.name()), str)
 
     def test_owner(self):
         # check if returned owner name is string
 
-        self.assertIsInstance(test_repo.owner(), str)
+        self.assertIs(type(test_repo.owner()), str)
 
     def test_description(self):
         # check if returned description is string
 
-        self.assertIsInstance(test_repo.description(), str)
+        self.assertIs(type(test_repo.description()), str)
 
     def test_is_forked(self):
         # check if returned is_forked is boolean
 
-        self.assertIsInstance(test_repo.is_forked(), bool)
+        self.assertIs(type(test_repo.is_forked()), bool)
 
     def test_created_at(self):
         # check if returned created at date is string
 
-        self.assertIsInstance(test_repo.created_at(), str)
+        self.assertIs(type(test_repo.created_at()), str)
 
     def test_size(self):
         # check if returned repository size is string
 
-        self.assertIsInstance(test_repo.size(), int)
+        self.assertIs(type(test_repo.size()), int)
 
     def test_language(self):
         # check if returned language is string
 
-        self.assertIsInstance(test_repo.language(), str)
+        self.assertIs(type(test_repo.language()), str)
 
     def test_watchers(self):
         # check if returned number of watchers is int
 
-        self.assertIsInstance(test_repo.watchers(), int)
+        self.assertIs(type(test_repo.watchers()), int)
 
     def test_stars(self):
         # check if returned number of stars is int
 
-        self.assertIsInstance(test_repo.stars(), int)
+        self.assertIs(type(test_repo.stars()), int)
 
     def test_forks(self):
         # check if returned number of forks is int
 
-        self.assertIsInstance(test_repo.forks(), int)
+        self.assertIs(type(test_repo.forks()), int)
 
     def test_open_issues(self):
         # check if returned number of open issues is int
 
-        self.assertIsInstance(test_repo.open_issues(), int)
+        self.assertIs(type(test_repo.open_issues()), int)
 
     def test_default_branch(self):
         # check if returned number of branches is int
 
-        self.assertIsInstance(test_repo.default_branch(), str)
+        self.assertIs(type(test_repo.default_branch()), str)
 
     def test_subscribers(self):
         # check if returned subscriber count is int
 
-        self.assertIsInstance(test_repo.subscribers(), int)
+        self.assertIs(type(test_repo.subscribers()), int)
 
 if __name__ == '__main__':
     # execute the test if this file is run as a Python script
-    
+
     unittest.main()
