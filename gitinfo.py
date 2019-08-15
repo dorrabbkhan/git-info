@@ -7,10 +7,10 @@ URL and parses the JSON from the Github API data of the given repository.
 Depends on the regex and requests modules.
 """
 
-url_expression = r'(https?://)?(www.)?github.com/[a-zA-Z0-9-]+/[a-zA-Z0-9-]+'
+url_expression = r'(https?://)?(www.)?github.com/[a-zA-Z0-9-_]+/[a-zA-Z0-9-_]+'
 # initialize regex expression for a github repository's URL
 
-repo_expression = r'/[a-zA-Z0-9-]+/[a-zA-Z0-9-]+'
+repo_expression = r'/[a-zA-Z0-9-_]+/[a-zA-Z0-9-_]+'
 # expression to create url for Github API
 
 
