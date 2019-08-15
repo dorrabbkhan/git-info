@@ -5,6 +5,16 @@
 All notable changes/additions/deletions are documented in this file.
 
 
+## 16 Aug, 2019
+
+
+### Changes
+
+- Wrote further unittests for the values returned by the Repository class methods
+- Formatted the unittests better
+- Implemented assertIs instead of assertIsInstance for tighter check on types of data returned
+- Removed redundant int() functions on returned values in some of the Repository class methods since data returned by the Github API's JSON is already int
+
 
 ## 15 Aug, 2019
 
