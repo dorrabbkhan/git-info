@@ -36,6 +36,7 @@ import gitinfo
 
 
 
+
 When run as a script:
 
 ```
@@ -57,6 +58,7 @@ Subscribers: 1
 ```
 
 When importing into your own code:
+
 ```
 from gitinfo import repository
 
@@ -76,6 +78,7 @@ print(f'Open Issues: {new.open_issues()}')
 print(f'Default Branch: {new.default_branch()}')
 print(f'Subscribers: {new.subscribers()}')
 ```
+
 
 ## Future plans
 
