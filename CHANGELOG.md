@@ -14,6 +14,7 @@ All notable changes/additions/deletions are documented in this file.
 
 - Added changelog file
 - Added an informal test file 
+- Added .gitignore for .pyc files
 
 
 
@@ -25,3 +26,4 @@ All notable changes/additions/deletions are documented in this file.
 - Implemented slightly better error handling
 - Updated readme
 - Fixed issue #1 - added support for repository names with _ in them
+- Wrote unittests for regex pattern checks with correct URL inputs
