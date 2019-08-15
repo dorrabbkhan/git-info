@@ -7,18 +7,25 @@ data = [] # list of dictionaries
 
 @app.route("/")
 def index():
-    return render_template("index.html", data=data)
+    return render_template("index.html", repo_data=data)
 
 @app.route("/get_data", methods=["POST"])
 def get_data():
     url = request.form['url']
-    repo = Repository(url)
-    for name, info in enumerate([d for d in dir(repo) if not d.startswith("__")]): # all magic methods excluded
-        datum = {
-            "name": name,
-            "info": info
-        }
-        data.append(datum)
-    return index()
+    try:
+        repo = Repository(url)
+        for name in [d for d in dir(repo) if not d.startswith("_") and not "url" in d]: # all magic/private methods excluded
+            datum = {
+                "name": name,
+                "info": eval("repo."+name+"()")
+            }
+            data.append(datum)
+    except Exception as e:
+        data.append({
+            "name": "Error",
+            "info": e
+        })
+    finally:
+        return index()
 
 app.run(host="127.0.0.1", port=5000, debug=True) 
