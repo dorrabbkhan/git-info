@@ -53,7 +53,35 @@ class TestRepo(unittest.TestCase):
 
     def test_size(self):
 
-        self.assertIsInstance(test_repo.size(), str)
+        self.assertIsInstance(test_repo.size(), int)
+
+    def test_language(self):
+
+        self.assertIsInstance(test_repo.language(), str)
+
+    def test_watchers(self):
+
+        self.assertIsInstance(test_repo.watchers(), int)
+
+    def test_stars(self):
+
+        self.assertIsInstance(test_repo.stars(), int)
+
+    def test_forks(self):
+
+        self.assertIsInstance(test_repo.forks(), int)
+
+    def test_open_issues(self):
+
+        self.assertIsInstance(test_repo.open_issues(), int)
+
+    def test_default_branch(self):
+
+        self.assertIsInstance(test_repo.default_branch(), str)
+
+    def test_subscribers(self):
+
+        self.assertIsInstance(test_repo.subscribers(), int)
 
 if __name__ == '__main__':
     unittest.main()
