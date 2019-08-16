@@ -33,8 +33,12 @@ class Repository:
 
     @url.setter
     def url(self, url):
-        # set URL after running regex test on it
-
+        # set URL after running checks on it
+        
+        if not type(url) == str:
+            raise TypeError("URL parameter only accepts string")
+            # raise error if type of the argument is not string 
+            
         if not search(url_expression, url):
             raise ValueError("Invalid Github repo URL")
             # raise error if the input URL does not match the regex pattern
