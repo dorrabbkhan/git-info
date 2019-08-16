@@ -5,7 +5,9 @@
 All notable changes/additions/deletions are documented in this file.
 
 
+
 ## 16 Aug, 2019
+
 
 
 ### Changes
@@ -14,6 +16,9 @@ All notable changes/additions/deletions are documented in this file.
 - Formatted the unittests better
 - Implemented assertIs instead of assertIsInstance for tighter check on types of data returned
 - Removed redundant int() functions on returned values in some of the Repository class methods since data returned by the Github API's JSON is already int
+- Added checks for incorrect URL's to test.py
+- Added check for when a data type other than string is passed to the Repository class's init function
+
 
 
 ## 15 Aug, 2019
