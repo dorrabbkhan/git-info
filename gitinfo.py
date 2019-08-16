@@ -5,7 +5,7 @@ Depends on the regex and requests modules.
 """
 
 from re import search
-from requests import get
+from requests import get, exceptions
 
 URL_EXPRESSION = r'(https?://)?(www.)?github.com/[a-zA-Z0-9-_]+/[a-zA-Z0-9-_]+'
 # initialize regex expression for a github repository's URL
@@ -26,7 +26,7 @@ class Repository:
         self.url = input_url
         # set the repository's URL
 
-        self.set_repo_info()
+        self._set_repo_info()
         # obtain repository's information
 
     @property
@@ -52,7 +52,7 @@ class Repository:
 
         self._url = input_url
 
-    def set_repo_info(self):
+    def _set_repo_info(self):
         """
         function to obtain the repository's information from the web
         and store it in this object
@@ -64,8 +64,12 @@ class Repository:
         output_url = 'https://api.github.com/repos' + match.group()
         # append /user/repo to Github API's URL
 
-        response = get(output_url, headers={"Accept": "application/json"})
-        # request the repository's JSON from the Github API
+        try:
+            response = get(output_url, headers={"Accept": "application/json"})
+            # request the repository's JSON from the Github API
+
+        except exceptions.RequestException:
+            raise ConnectionError("Error establishing a new connection")
 
         if response.status_code != 200:
             raise ConnectionError("Error reaching the repository")
