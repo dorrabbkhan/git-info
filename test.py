@@ -3,9 +3,9 @@ import unittest
 import re
 
 """
-Unittest file for git-info
-Uses unittest to set up tests for possible 
-inputs and expected outputs
+Unittest file for git-info. Uses unittest to set up
+tests for possible inputs and expected outputs. All 
+tests report ok. Execute the Python file to run tests
 """
 
 correct_urls = [
@@ -51,104 +51,106 @@ class TestRepo(unittest.TestCase):
 
         for url in correct_urls:
             self.assertIsNotNone(re.search(gitinfo.url_expression, url))
-        # check that correct URL's return a match
+        # assert that correct URL's return a match
 
         for url in incorrect_urls:
             self.assertIsNone(re.search(gitinfo.url_expression, url))
-        # check that incorrect URL's don't return a match
+        # assert that incorrect URL's don't return a match
 
-        for url in incorrect_type_urls:
-            self.assertRaises(TypeError, re.search, gitinfo.url_expression, url)
-        # check that incorrect types raise an Error 
-
-    def test_init_errors(self):
+    def test_init_method(self):
+        # test the init method of the Repository class for various arguments
 
         for url in correct_urls:
-            test_repo_2 = gitinfo.repository(url)
-            self.assertIs(type(test_repo_2), gitinfo.Repository)
+            temp_test_repo = gitinfo.repository(url)
+            self.assertIs(type(temp_test_repo), gitinfo.Repository)
+            # assert that correct URL's form a repository object
         
         for url in incorrect_urls:
             self.assertRaises(ValueError, gitinfo.repository, url)
+            # assert that string arguments with wrong format raise ValueError 
 
         for url in incorrect_type_urls:
             self.assertRaises(TypeError, gitinfo.repository, url)
+            # assert that arguments with wrong type raise TypeError
 
     def test_output_url_regex(self):
         # check regex of output URL for each URL in correct_urls
 
         for url in correct_urls:
             self.assertIsNotNone(re.search(gitinfo.repo_expression, url))
+            # assert that correct URL's return a match
 
         for url in incorrect_urls:
             self.assertIsNone(re.search(gitinfo.repo_expression, url))
+            # assest that incorrect URL's don't return a match
 
     def test_repo_object_url(self):
-        # check if the new object's stored URL equals the input URL
+        # assert that the new object's stored URL equals the input URL
 
         self.assertEqual(correct_urls[0], test_repo.url)
 
     def test_name(self):
-        # check if returned name is string
+        # assert that returned name is string
 
         self.assertIs(type(test_repo.name()), str)
 
     def test_owner(self):
-        # check if returned owner name is string
+        # assert that returned owner name is string
 
         self.assertIs(type(test_repo.owner()), str)
 
     def test_description(self):
-        # check if returned description is string
+        # assert that returned description is string
 
         self.assertIs(type(test_repo.description()), str)
 
     def test_is_forked(self):
-        # check if returned is_forked is boolean
+        # assert that returned is_forked is boolean
 
         self.assertIs(type(test_repo.is_forked()), bool)
 
     def test_created_at(self):
-        # check if returned created at date is string
+        # assert that returned created at date is string
 
         self.assertIs(type(test_repo.created_at()), str)
 
     def test_size(self):
-        # check if returned repository size is string
+        # assert that returned repository size is string
 
         self.assertIs(type(test_repo.size()), int)
 
     def test_language(self):
-        # check if returned language is string
+        # assert that returned language is string
 
         self.assertIs(type(test_repo.language()), str)
 
     def test_watchers(self):
-        # check if returned number of watchers is int
+        # assert that returned number of watchers is int
 
         self.assertIs(type(test_repo.watchers()), int)
 
     def test_stars(self):
-        # check if returned number of stars is int
+        # assert that returned number of stars is int
 
         self.assertIs(type(test_repo.stars()), int)
 
     def test_forks(self):
-        # check if returned number of forks is int
+        # assert that returned number of forks is int
 
         self.assertIs(type(test_repo.forks()), int)
 
     def test_open_issues(self):
-        # check if returned number of open issues is int
+        # assert that returned number of open issues is int
 
         self.assertIs(type(test_repo.open_issues()), int)
 
     def test_default_branch(self):
-        # check if returned number of branches is int
+        # assert that returned number of branches is int
 
         self.assertIs(type(test_repo.default_branch()), str)
 
     def test_subscribers(self):
-        # check if returned subscriber count is int
+        # assert that returned subscriber count is int
 
         self.assertIs(type(test_repo.subscribers()), int)
 
