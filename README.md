@@ -80,6 +80,11 @@ print(f'Subscribers: {new.subscribers()}')
 ```
 
 
+## Tests
+
+Execute test.py to run tests on the package, implemented using unittest. All tests should return OK, given that you have a working internet connection. 
+
+
 ## Future plans
 
 
