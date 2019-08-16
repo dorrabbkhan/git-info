@@ -84,7 +84,7 @@ class Repository:
     def is_forked(self):
         # return whether the repository is forked
 
-        return self._repo_data["fork"] != "true"
+        return bool(self._repo_data["fork"])
 
     def created_at(self):
         # return the repository's creation date and time
@@ -104,7 +104,7 @@ class Repository:
     def watchers(self):
         # return the repository's number of watchers
 
-        return self._repo_data["watchers"]
+        return self._repo_data["subscribers_count"]
 
     def stars(self):
         # return the repository's number of stars
@@ -132,6 +132,8 @@ class Repository:
         return self._repo_data["subscribers_count"]
 
 def repository(url):
+    # initialize repository
+
     return Repository(url)
 
 if __name__ == "__main__":

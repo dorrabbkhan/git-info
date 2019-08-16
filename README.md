@@ -85,13 +85,13 @@ When run in the web browser:
 
 ![Git-info web server in CMD](img/cmd.png)
 
-![Git-info on the web](img/web.jpg)
+![Git-info on the web](img/web.JPG)
 
 
 
 ## Tests
 
-Execute test.py to run tests on the package, implemented using unittest. All tests should return OK, given that you have a working internet connection. 
+Execute test.py to run tests on the package, implemented using unittest. All 21 tests should return OK, given that you have a working internet connection. 
 
 
 ## Future plans
