@@ -3,12 +3,12 @@ import unittest
 import re
 
 """
-Testing file for git-info
+Unittest file for git-info
 Uses unittest to set up tests for possible 
 inputs and expected outputs
 """
 
-base_urls = [
+correct_urls = [
 
     "https://github.com/dorrabbkhan/git-info",
     "http://github.com/dorrabbkhan/git-info",
@@ -18,30 +18,74 @@ base_urls = [
     "github.com/dorrabbkhan/git-info"
 
 ]
+
+incorrect_urls = [
+
+    "gibberish43!%23\n\\^$&(&",
+    "http://www.github.com/"
+    "http://www.github.com//"
+
+]
+
+incorrect_type_urls = [
+
+    234234,
+    435.543,
+    True,
+    [43, 54, 34],
+    ("http://", "github.com", "/dorrabbkhan/git-info"),
+    ["http://", "github.com", "/dorrabbkhan/git-info"],
+    {"http://", "github.com", "/dorrabbkhan/git-info"},
+
+]
 # create URL's to check regex with
 
-test_repo = gitinfo.Repository(base_urls[0])
-# initialized a repository object with the first URL in base_urls
+test_repo = gitinfo.Repository(correct_urls[0])
+# initialized a repository object with the first URL in correct_urls
 
 class TestRepo(unittest.TestCase):
     # create the testing class with unittest
 
     def test_url_regex(self):
-        # test the regex of the input URL for each URL in base_urls
+        # test the regex of the input URL for each URL in correct_urls
 
-        for url in base_urls:
+        for url in correct_urls:
             self.assertIsNotNone(re.search(gitinfo.url_expression, url))
+        # check that correct URL's return a match
+
+        for url in incorrect_urls:
+            self.assertIsNone(re.search(gitinfo.url_expression, url))
+        # check that incorrect URL's don't return a match
+
+        for url in incorrect_type_urls:
+            self.assertRaises(TypeError, re.search, gitinfo.url_expression, url)
+        # check that incorrect types raise an Error 
+
+    def test_init_errors(self):
+
+        for url in correct_urls:
+            test_repo_2 = gitinfo.repository(url)
+            self.assertIs(type(test_repo_2), gitinfo.Repository)
+        
+        for url in incorrect_urls:
+            self.assertRaises(ValueError, gitinfo.repository, url)
+
+        for url in incorrect_type_urls:
+            self.assertRaises(TypeError, gitinfo.repository, url)
 
     def test_output_url_regex(self):
-        # check regex of output URL for each URL in base_urls
+        # check regex of output URL for each URL in correct_urls
 
-        for url in base_urls:
+        for url in correct_urls:
             self.assertIsNotNone(re.search(gitinfo.repo_expression, url))
+
+        for url in incorrect_urls:
+            self.assertIsNone(re.search(gitinfo.repo_expression, url))
 
     def test_repo_object_url(self):
         # check if the new object's stored URL equals the input URL
 
-        self.assertEqual(base_urls[0], test_repo.url)
+        self.assertEqual(correct_urls[0], test_repo.url)
 
     def test_name(self):
         # check if returned name is string
