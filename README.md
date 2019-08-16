@@ -80,6 +80,15 @@ print(f'Subscribers: {new.subscribers()}')
 ```
 
 
+
+When run in the web browser:
+
+![Git-info web server in CMD](img/cmd.png)
+
+![Git-info on the web](img/web.jpg)
+
+
+
 ## Tests
 
 Execute test.py to run tests on the package, implemented using unittest. All tests should return OK, given that you have a working internet connection. 
@@ -93,10 +102,8 @@ Execute test.py to run tests on the package, implemented using unittest. All tes
 
 - Add a GUI
 - Add support for more detailed information
-- Turn into a reusable package instead of a script and publish package
-- Write tests for the code
+- Publish package
 - Better documentation for usage
-
 
 ------
 
