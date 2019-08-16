@@ -5,6 +5,15 @@
 All notable changes/additions/deletions are documented in this file.
 
 
+## 17 Aug, 2019
+
+
+
+### Changes
+
+- Minor code fixes in gitinfo.py and test.py
+- Pylint cleanup of gitinfo.py
+
 
 ## 16 Aug, 2019
 
