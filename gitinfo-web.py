@@ -1,8 +1,8 @@
 """
 Runs a Flask webserver which allows you to view information about a Github
 repository, which is obtained using the gitinfo.Repository class. Depends on
-the flask package, and the gitinfo module. Will dynamically add new information
-based on the available functions of said class.
+the flask package, and the gitinfo module. Will dynamically add new 
+information based on the available functions of said class.
 """
 
 from flask import Flask, render_template, request
@@ -29,10 +29,6 @@ def get_data():
     url = request.form['url']
     # gets the URL from the input box on index.html
 
-    if not url.startswith("https://www.github.com/"):
-        url = "https://www.github.com/" + url
-        # allows 'user/repo' format
-
     try:
         DATA.clear()
         # empties the list
@@ -44,7 +40,8 @@ def get_data():
                 and callable(getattr(repo, function))
             ]:
             # only public functions from repo object used
-            # which do not start with _ and are callable
+            # by selecting attributes which do
+            # not start with _ and are callable
 
             datum = {
                 "name": name,
