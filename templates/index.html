@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>gitinfo for the web</title>
+    </head>
+    <body>
+        <h1>gitinfo</h1>
+        <h2>Information about any Github repository</h2>
+        <form action="/get_data", method="POST">
+            <input type="text" placeholder="Github URL" name="url">
+            <input type="submit" value="Go!">
+        </form>
+        <p>
+        {% if repo_data %}
+            {% for datum in repo_data %}
+                <b>{{ datum["name"] }}: </b>{{ datum["info"] }}
+                <br \>
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>
