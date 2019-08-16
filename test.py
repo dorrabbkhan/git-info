@@ -52,39 +52,39 @@ class TestRepo(unittest.TestCase):
 
         for url in correct_urls:
             self.assertIsNotNone(re.search(gitinfo.url_expression, url))
-        
+
     def test_incorrect_url_regex(self):
         # assert that incorrect URL's don't return a match
 
         for url in incorrect_urls:
             self.assertIsNone(re.search(gitinfo.url_expression, url))
-        
+
     def test_init_correct_url(self):
         # assert that correct URL's form a repository object
 
         for url in correct_urls:
             temp_test_repo = gitinfo.repository(url)
             self.assertIs(type(temp_test_repo), gitinfo.Repository)
-            
+
     def test_init_incorrect_url(self):
         # assert that string arguments with wrong format raise ValueError
 
         for url in incorrect_urls:
             self.assertRaises(ValueError, gitinfo.repository, url)
-            
+
     def test_init_incorrect_type_url(self):
         # assert that arguments with wrong type raise TypeError
 
         for url in incorrect_type_urls:
             self.assertRaises(TypeError, gitinfo.repository, url)
-            
+
     def test_correct_output_url_regex(self):
         # assert that correct URL's return a match
 
         for url in correct_urls:
             self.assertIsNotNone(re.search(gitinfo.repo_expression, url))
-            
-    def test_correct_output_url_regex(self):
+
+    def test_incorrect_output_url_regex(self):
         # assest that incorrect URL's don't return a match
 
         for url in incorrect_urls:

@@ -18,6 +18,7 @@ All notable changes/additions/deletions are documented in this file.
 - Removed redundant int() functions on returned values in some of the Repository class methods since data returned by the Github API's JSON is already int
 - Added checks for incorrect URL's to test.py
 - Added check for when a data type other than string is passed to the Repository class's init function
+- PEP8 Cleanup for test file
 
 
 
