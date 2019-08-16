@@ -4,7 +4,7 @@ import re
 
 """
 Unittest file for git-info. Uses unittest to set up
-tests for possible inputs and expected outputs. All 
+tests for possible inputs and expected outputs. All
 tests report ok. Execute the Python file to run tests
 """
 
@@ -38,10 +38,11 @@ incorrect_type_urls = [
     {"http://", "github.com", "/dorrabbkhan/git-info"},
 
 ]
-# create URL's to check regex with
+# create test data to check regex with
 
 test_repo = gitinfo.Repository(correct_urls[0])
 # initialized a repository object with the first URL in correct_urls
+
 
 class TestRepo(unittest.TestCase):
     # create the testing class with unittest
@@ -64,10 +65,10 @@ class TestRepo(unittest.TestCase):
             temp_test_repo = gitinfo.repository(url)
             self.assertIs(type(temp_test_repo), gitinfo.Repository)
             # assert that correct URL's form a repository object
-        
+
         for url in incorrect_urls:
             self.assertRaises(ValueError, gitinfo.repository, url)
-            # assert that string arguments with wrong format raise ValueError 
+            # assert that string arguments with wrong format raise ValueError
 
         for url in incorrect_type_urls:
             self.assertRaises(TypeError, gitinfo.repository, url)
@@ -153,6 +154,7 @@ class TestRepo(unittest.TestCase):
         # assert that returned subscriber count is int
 
         self.assertIs(type(test_repo.subscribers()), int)
+
 
 if __name__ == '__main__':
     # execute the test if this file is run as a Python script
