@@ -12,10 +12,10 @@ Python package to view the size of a github repository, along with other useful 
 
 
 
-If you haven't already, install the requests module using:
+If you haven't already, install the requests and the flask modules using:
 
 ```
-pip install requests
+pip install requests flask
 ```
 
 or
@@ -26,7 +26,7 @@ pip install -r requrements.txt
 
 
 
-Download gitinfo.py, and execute the file in Python. Input the Github repository's URL, and the repository's name, owner's name, description, whether it is forked or not, size, and programming language will be displayed. Alternatively, import it into your own Python code using 
+Download gitinfo.py, and execute the file in Python. Input the Github repository's URL, and the repository's name, owner's name, description, whether it is forked or not, size, and programming language will be displayed. Running gitinfo-web.py will allow you to view this information in a web browser on your local network. Alternatively, import it into your own Python code using 
 
 ```
 import gitinfo
