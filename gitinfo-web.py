@@ -9,7 +9,7 @@ from flask import Flask, render_template, request
 from gitinfo import repository
 
 APP = Flask(__name__)
-DATA = []
+data = []
 # initialize Flask app, list of dictionaries
 
 @APP.route("/")
@@ -18,7 +18,7 @@ def index():
     Index page which renders any information given to it.
     """
 
-    return render_template("index.html", repo_data=DATA)
+    return render_template("index.html", repo_data=data)
 
 @APP.route("/get_data", methods=["POST"])
 def get_data():
@@ -30,7 +30,7 @@ def get_data():
     # gets the URL from the input box on index.html
 
     try:
-        DATA.clear()
+        data.clear()
         # empties the list
 
         repo = repository(url)
@@ -49,13 +49,13 @@ def get_data():
             }
             # format required by index.html
 
-            DATA.append(datum)
+            data.append(datum)
             # append to data to be displayed on index.html
 
     except Exception as error:
         # in case of errors, tells the client
 
-        DATA.append({
+        data.append({
             "name": "Error",
             "info": error
         })
