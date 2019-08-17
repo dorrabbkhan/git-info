@@ -85,7 +85,7 @@ When run in the web browser:
 
 ![Git-info web server in CMD](img/cmd.png)
 
-![Git-info on the web](img/web.JPG)
+![Git-info on the web](img/web.png)
 
 
 

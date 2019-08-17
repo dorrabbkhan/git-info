@@ -5,6 +5,27 @@
 All notable changes/additions/deletions are documented in this file.
 
 
+## 18 Aug, 2019
+
+
+
+### Additions
+
+- static/style.css - CSS stylesheet for web server
+- static/bg.jpg - background for web server
+- Link to source code in footer of webpage
+
+
+### Changes
+
+- Beautified Flask webpage
+- Linked html to stylesheet
+- Changed title of webpage
+- Changed screenshot of webpage on README.md
+  
+
+
+
 ## 17 Aug, 2019
 
 
@@ -13,6 +34,7 @@ All notable changes/additions/deletions are documented in this file.
 
 - Minor code fixes in gitinfo.py and test.py
 - Pylint cleanup of gitinfo.py
+- Removed user/repo functionality
 
 
 ## 16 Aug, 2019
