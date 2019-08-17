@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>gitinfo for the web</title>
-    </head>
-    <body>
-        <h1>gitinfo</h1>
-        <h2>Information about any Github repository</h2>
-        <form action="/get_data", method="POST">
-            <input type="text" placeholder="Github URL" name="url">
-            <input type="submit" value="Go!">
-        </form>
-        <p>
-        {% if repo_data %}
-            {% for datum in repo_data %}
-                <b>{{ datum["name"] }}: </b>{{ datum["info"] }}
-                {% if datum["name"] == "size" %}
-                    KB
-                {% endif %}
-                <br \>
-            {% endfor %}
-        {% endif %}
-    </body>
+
+<head>
+	<title>gitinfo for the web</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+
+<body>
+	<h1>Git-Info</h1>
+	<div class="search-box">
+		<h2>Information about any Github repository</h2>
+		<form class="search " action="/get_data" , method="POST">
+			<input type="text" placeholder="Github URL" name="url" class="inputtext" autocomplete="off" required />
+			<input type="submit" value="Go!" class="btn" />
+		</form>
+	</div>
+	<table class="info">
+		{% if repo_data %}
+		{% for datum in repo_data %}
+		<tr>
+			<td>{{ datum["name"].title().replace("_", " ") }}</td>
+			<td>{{ datum["info"] }}
+				{% if datum["name"] == "size" %}
+				KB
+				{% endif %}
+			</td>
+		</tr>
+		{% endfor %}
+		{% endif %}
+	</table>
+	<footer>
+		<p>Source code <a href="https://github.com/dorrabbkhan/git-info">here.</a></p>
+	</footer>
+</body>
+
 </html>
