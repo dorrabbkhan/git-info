@@ -100,9 +100,9 @@ Execute test.py to run tests on the package, implemented using unittest. All 21 
 
 
 
-- Add a GUI
-- Add support for more detailed information
-- Publish package
+- Add a GUI and functionality to run directly from CLI
+- Add support for more types of repository URL's
+- Publish package to PyPi
 - Better documentation for usage
 
 ------
