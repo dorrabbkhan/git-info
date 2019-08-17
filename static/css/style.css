@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap');
+
+body {
+  background-image: url("bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin: 0;
+  color: rgb(221, 221, 221);
+  ;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+body h1 {
+  font-size: 100px;
+  text-align: center;
+}
+
+.info {
+  border: 0px solid #000000;
+  background-color: rgba(47, 47, 47, 0.459);
+  width: 800px;
+  text-align: center;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+}
+
+table.info tbody td {
+  font-size: 18px;
+  color: #E6E6E6;
+  border: 1px solid #4444443d;
+  padding: 15px;
+}
+
+table.info tr:nth-child(even) {
+  background: #6d6d6d8e;
+}
+
+.search-box {
+  font-style: bold;
+  padding: 6em 0;
+  text-align: center;
+}
+
+.search-box h2 {
+  margin: 0 0 .85em 0;
+  font-weight: 100;
+  font-size: 30px;
+}
+
+.search-box .search {
+  max-width: 600px;
+  margin: auto;
+}
+
+.search-box .search .inputtext {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid;
+  padding: 1em 0 .8em;
+  text-align: center;
+  font-size: 18px;
+  font-family: inherit;
+  font-weight: 300;
+  line-height: 1.5;
+  color: inherit;
+  outline: none;
+}
+
+.search-box .search input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-box .search input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-box .search input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-box .search input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-box .search .btn {
+  all: unset;
+  margin-top: 2.4em;
+  background: transparent;
+  border: 2px solid white;
+  padding: 1em 4em;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  position: relative;
+}
+
+footer {
+  color: white;
+  font-size: 20px;
+  margin: 50px;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+}
