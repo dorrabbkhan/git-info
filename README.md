@@ -104,6 +104,7 @@ Execute test.py to run tests on the package, implemented using unittest. All 21 
 - Add support for more types of repository URL's
 - Publish package to PyPi
 - Better documentation for usage
+- Deploy on Heroku or similar web service
 
 ------
 
