@@ -17,7 +17,7 @@ body h1 {
 
 .info {
   border: 0px solid #000000;
-  background-color: rgba(47, 47, 47, 0.459);
+  background-color: rgba(0, 0, 0, 0.4);
   width: 800px;
   text-align: center;
   border-collapse: collapse;
@@ -34,7 +34,7 @@ table.info tbody td {
 }
 
 table.info tr:nth-child(even) {
-  background: #6d6d6d8e;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .search-box {
